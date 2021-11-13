@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+
+    <title>Frontend Mentor | Intro component with sign up form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
+        
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+        
+        body {
+            background: hsl(0, 100%, 74%) url('bg-intro-desktop.png') no-repeat;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+        }
+        
+        h1 {
+            font-size: 45px;
+            margin-top: 50%;
+            font-weight: bolder;
+            line-height: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .container {
+            width: 100vw;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .one {
+            color: white;
+            width: 50%;
+            width: 50%;
+            float: left;
+        }
+        
+        .two {
+            color: white;
+            width: 50%;
+            width: 50%;
+            float: right;
+        }
+        
+        .three {
+            width: 440px;
+            height: 500px;
+            /* border: 2px solid white; */
+            margin: auto;
+            padding: 10px;
+        }
+        /*         
+        .four {
+            border: 2px solid white;
+        } */
+        
+        .fi {
+            width: 440px;
+            background-color: hsl(248, 32%, 49%);
+            height: 40px;
+            text-align: center;
+            padding: 20px 0px 0px;
+            border-radius: 15px;
+            margin: 70px 10px 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        span {
+            font-weight: bolder;
+        }
+        
+        .form1 {
+            width: 440px;
+            height: auto;
+            color: hsl(246, 25%, 77%);
+            background-color: white;
+            margin-left: 10px;
+            border-radius: 15px;
+            font-family: 'Poppins', sans-serif;
+            padding-bottom: 10px;
+        }
+        
+        input:nth-child(1) {
+            margin-top: 30px;
+        }
+        
+        input {
+            width: 360px;
+            height: 35px;
+            border-radius: 5px;
+            margin: 0px 30px 20px 30px;
+            border: 1px solid hsl(246, 25%, 77%);
+            color: hsl(246, 25%, 77%);
+            font-size: 12px;
+            padding-left: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        button {
+            width: 380px;
+            height: 40px;
+            border-radius: 5px;
+            background-color: hsl(154, 59%, 51%);
+            margin: 0px 30px 0px 30px;
+            border: none;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+        }
+        
+        .terms {
+            text-align: center;
+            font-size: 10px;
+        }
+        
+        a {
+            color: hsl(0, 100%, 74%);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        
+        .one::after,
+        .two::before {
+            content: '';
+            clear: both;
+            display: block;
+        }
+        /*         
+        .icon {
+            background: url('icon-error.svg') no-repeat right 10px center;
+        } */
+        
+        .errormsg {
+            color: hsl(0, 100%, 74%);
+            text-align: right;
+            margin: -20px 30px 16px;
+            font-size: 10px;
+            display: none;
+        }
+        
+        @media only screen and (max-width:920px) {
+            .errormsg {
+                margin: -20px 39px 16px;
+            }
+            .three {
+                width: 350px;
+            }
+            .one {
+                width: 45%;
+            }
+            .two {
+                width: 55%;
+            }
+            .fi,
+            .form1 {
+                width: 400px;
+            }
+            input {
+                width: 310px;
+            }
+            button {
+                width: 335px;
+            }
+        }
+        
+        @media only screen and (max-width:780px) {
+            .one {
+                width: 347px;
+            }
+            .two {
+                width: 424px;
+            }
+            .errormsg {
+                margin: -20px 39px 16px;
+            }
+            .container {
+                width: 772px;
+                height: 100%;
+                /* height: 100vh; */
+            }
+        }
+        
+        @media only screen and (max-width:660px) {
+            body {
+                background: hsl(0, 100%, 74%) url('bg-intro-mobile.png') no-repeat;
+            }
+            .errormsg {
+                margin: -20px 5% 16px;
+            }
+            input {
+                width: calc(90% - 20px);
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+            .one {
+                float: unset;
+                margin: auto;
+                width: 100%;
+                max-height: 254px;
+            }
+            .two {
+                float: unset;
+                margin: auto;
+                margin-bottom: 30px;
+                width: 100%;
+            }
+            .fi {
+                margin-top: 20px;
+                margin: 5%;
+                width: calc(90% - 20px);
+                padding: 15px 10px 0;
+            }
+            .form1 {
+                margin: 5%;
+                width: 90%;
+            }
+            h1 {
+                margin-top: 20px;
+            }
+            .container {
+                margin: auto;
+                width: 100%;
+            }
+            .three {
+                width: 90%;
+                height: 100%;
+            }
+            .four {
+                width: 90%;
+                margin: auto;
+            }
+            button {
+                width: calc(90% + 5px);
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+            .terms {
+                padding: 5px;
+            }
+        }
+    </style>
+    <script>
+        function myfunction() {
+            if (document.getElementById('firstname').value == "") {
+                document.getElementById('efn').style.display = "block";
+                document.getElementById('firstname').style.background = "#ffffff url('icon-error.svg') no-repeat right 10px center";
+            }
+            if (document.getElementById('lastname').value == "") {
+                document.getElementById('eln').style.display = "block";
+                document.getElementById('lastname').style.background = "#ffffff url('icon-error.svg') no-repeat right 10px center";
+            }
+            var validRegex = /^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-zA-Z]+)?$/
+            var mail1 = document.getElementById('email')
+            if (!(mail1.value.match(validRegex))) {
+
+                document.getElementById('eemail').style.display = "block";
+                document.getElementById('email').style.background = "#ffffff url('icon-error.svg') no-repeat right 10px center";
+            }
+            if (document.getElementById('password').value.length == "0") {
+                document.getElementById('epass').style.display = "block";
+                document.getElementById('password').style.background = "#ffffff url('icon-error.svg') no-repeat right 10px center";
+            }
+            if (document.getElementById('firstname').value == "" || document.getElementById('lastname').value == "") {
+                return false;
+            }
+        }
+
+        function reply_click(clicked_id) {
+
+            if (clicked_id == "firstname") {
+                document.getElementById('efn').style.display = "none";
+                document.getElementById('firstname').style.background = "none";
+            }
+
+            if (clicked_id == "lastname") {
+                document.getElementById('eln').style.display = "none";
+                document.getElementById('lastname').style.background = "none";
+            }
+
+            if (clicked_id == "email") {
+                document.getElementById('eemail').style.display = "none";
+                document.getElementById('email').style.background = "none";
+            }
+            if (clicked_id == "password") {
+                document.getElementById('epass').style.display = "none";
+                document.getElementById('password').style.background = "none";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="one">
+            <div class="three">
+                <h1>Learn to code by watching others</h1>
+                <p> See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable. </p>
+            </div>
+        </div>
+        <div class="two">
+            <div class="four">
+                <p class="fi"><span>Try it free 7 days</span> then $20/mo. thereafter </p>
+                <div class="form1">
+                    <input id="firstname" class="icon" type="text" oninput="reply_click(this.id)" placeholder="First Name">
+                    <p id="efn" class="errormsg">First Name cannot be empty</p>
+                    <input type="text" id="lastname" class="icon" oninput="reply_click(this.id)" placeholder="Last Name">
+                    <p id="eln" class="errormsg">Last Name cannot be empty</p>
+                    <input type="email" id="email" class="icon" oninput="reply_click(this.id)" placeholder="Email Address">
+                    <p id="eemail" class="errormsg">Looks like this is not an email</p>
+                    <input type="password" id="password" class="icon" oninput="reply_click(this.id)" placeholder="Password">
+                    <p id="epass" class="errormsg">Password cannot be empty</p>
+                    <button onclick="myfunction()">Claim your free trial</button>
+                    <p class="terms">By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
